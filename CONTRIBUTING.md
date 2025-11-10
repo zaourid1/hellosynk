@@ -1,11 +1,11 @@
-# Contributing to MindAI
+# Contributing to HelloSynk
 
-Thank you for your interest in contributing to MindAI! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to HelloSynk! This document provides guidelines and instructions for contributing.
 
 ## Getting Started
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/yourusername/mindai.git`
+2. Clone your fork: `git clone https://github.com/yourusername/HelloSynk.git`
 3. Install in development mode: `pip install -e ".[dev]"`
 4. Create a new branch: `git checkout -b feature/your-feature-name`
 
@@ -19,24 +19,24 @@ pip install -e ".[dev]"
 pytest
 
 # Format code
-black mindai/
+black HelloSynk/
 
 # Type checking
-mypy mindai/
+mypy HelloSynk/
 ```
 
 ## Creating Skills
 
-Skills are the core extension mechanism in MindAI. To create a new skill:
+Skills are the core extension mechanism in HelloSynk. To create a new skill:
 
-1. Create a new file in `mindai/skills/` or in `~/.mindai/skills/`
+1. Create a new file in `HelloSynk/skills/` or in `~/.HelloSynk/skills/`
 2. Inherit from `BaseSkill` and implement the required methods
 3. See `examples/create_custom_skill.py` for a template
 
 Example:
 
 ```python
-from mindai.skills import BaseSkill, SkillParameter
+from HelloSynk.skills import BaseSkill, SkillParameter
 
 class MySkill(BaseSkill):
     name = "my_skill"
