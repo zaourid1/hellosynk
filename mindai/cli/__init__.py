@@ -1,3 +1,0 @@
-"""CLI for MindAI"""
-
-
