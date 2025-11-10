@@ -5,7 +5,7 @@
 1. **Clone the repository**
    ```bash
    git clone https://github.com/zaourid1/hellosynk.git
-   cd mindai
+   cd HelloSynk
    ```
 
 2. **Install dependencies**
@@ -26,35 +26,35 @@
 
 ```bash
 # Process a query
-mindai chat "Create a calendar event for tomorrow at 2pm"
+HelloSynk chat "Create a calendar event for tomorrow at 2pm"
 
 # List installed skills
-mindai skill list
+HelloSynk skill list
 
 # Enable/disable skills
-mindai skill enable calendar
-mindai skill disable email
+HelloSynk skill enable calendar
+HelloSynk skill disable email
 
 # Search memory
-mindai memory search "meeting"
+HelloSynk memory search "meeting"
 
 # Add a memory
-mindai memory add "User prefers morning meetings" --type context
+HelloSynk memory add "User prefers morning meetings" --type context
 
 # Configure LLM
-mindai config set-llm --provider openai --model gpt-4 --api-key your-key
+HelloSynk config set-llm --provider openai --model gpt-4 --api-key your-key
 ```
 
 ### Using the Python API
 
 ```python
 import asyncio
-from mindai import MindAI
-from mindai.core.llm import LLMProvider
+from HelloSynk import HelloSynk
+from HelloSynk.core.llm import LLMProvider
 
 async def main():
-    # Initialize MindAI
-    agent = MindAI(
+    # Initialize HelloSynk
+    agent = HelloSynk(
         llm_provider=LLMProvider.OPENAI,
         llm_model="gpt-4"
     )
@@ -77,10 +77,10 @@ asyncio.run(main())
 
 ## Creating Your First Skill
 
-1. **Create a skill file** (`~/.mindai/skills/my_skill.py`):
+1. **Create a skill file** (`~/.HelloSynk/skills/my_skill.py`):
 
 ```python
-from mindai.skills import BaseSkill, SkillParameter
+from HelloSynk.skills import BaseSkill, SkillParameter
 
 class MySkill(BaseSkill):
     name = "my_skill"
@@ -105,11 +105,11 @@ class MySkill(BaseSkill):
         }
 ```
 
-2. **Restart MindAI** - your skill will be automatically discovered and loaded.
+2. **Restart HelloSynk** - your skill will be automatically discovered and loaded.
 
 3. **Use your skill**:
    ```bash
-   mindai chat "Use my_skill with input 'test'"
+   HelloSynk chat "Use my_skill with input 'test'"
    ```
 
 ## Next Steps
@@ -126,17 +126,17 @@ Make sure you've set your API key:
 ```bash
 export OPENAI_API_KEY="your-key"
 # Or configure via CLI
-mindai config set-llm --provider openai --api-key your-key
+HelloSynk config set-llm --provider openai --api-key your-key
 ```
 
 ### Skills not loading
-- Check that skill files are in `~/.mindai/skills/`
+- Check that skill files are in `~/.HelloSynk/skills/`
 - Ensure skills inherit from `BaseSkill`
 - Check for import errors in skill files
 
 ### Memory not persisting
-- Check that `~/.mindai/` directory exists and is writable
-- Verify database file `~/.mindai/mindai.db` is being created
+- Check that `~/.HelloSynk/` directory exists and is writable
+- Verify database file `~/.HelloSynk/HelloSynk.db` is being created
 
 ## Need Help?
 
