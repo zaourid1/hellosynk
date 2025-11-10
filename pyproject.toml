@@ -3,14 +3,14 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mindai"
+name = "HelloSynk"
 version = "0.1.0"
 description = "An open-source, local-first operating system for personal AI agents"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "MindAI Contributors"}
+    {name = "HelloSynk Contributors"}
 ]
 keywords = ["ai", "agent", "llm", "memory", "automation"]
 classifiers = [
@@ -48,11 +48,11 @@ dev = [
 ]
 
 [project.scripts]
-mindai = "mindai.cli.main:cli"
+HelloSynk = "HelloSynk.cli.main:cli"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["mindai*"]
+include = ["HelloSynk*"]
 
 [tool.black]
 line-length = 100
