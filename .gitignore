@@ -33,8 +33,8 @@ ENV/
 *.swo
 *~
 
-# MindAI specific
-.mindai/
+# HelloSynk specific
+.HelloSynk/
 *.db
 *.sqlite
 *.sqlite3
