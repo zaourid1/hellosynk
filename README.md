@@ -1,8 +1,8 @@
-# MindAI
+# HelloSynk
 
 > An open-source, local-first operating system for personal AI agents
 
-MindAI is a lightweight layer that gives any LLM persistent memory, reasoning, and the ability to take actions across apps. It runs on-device, stores context in a structured memory graph, and executes "skills" — small modular scripts that connect to services like email, Notion, or calendar.
+HelloSynk is a lightweight layer that gives any LLM persistent memory, reasoning, and the ability to take actions across apps. It runs on-device, stores context in a structured memory graph, and executes "skills" — small modular scripts that connect to services like email, Notion, or calendar.
 
 ## Features
 
@@ -16,7 +16,7 @@ MindAI is a lightweight layer that gives any LLM persistent memory, reasoning, a
 ## Architecture
 
 ```
-mindai/
+HelloSynk/
 ├── core/           # Core system components
 │   ├── memory/     # Memory graph system
 │   ├── llm/        # LLM integration layer
@@ -38,11 +38,11 @@ pip install -e .
 ### Basic Usage
 
 ```python
-from mindai import MindAI
-from mindai.skills import SkillRegistry
+from hellosynk import HelloSynk
+from HelloSynk.skills import SkillRegistry
 
-# Initialize MindAI
-agent = MindAI()
+# Initialize HelloSynk
+agent = HelloSynk()
 
 # Load skills
 registry = SkillRegistry()
@@ -55,7 +55,7 @@ response = agent.process("Check my calendar for tomorrow")
 ### Creating a Skill
 
 ```python
-from mindai.skills import BaseSkill
+from HelloSynk.skills import BaseSkill
 
 class MySkill(BaseSkill):
     name = "my_skill"
@@ -76,7 +76,7 @@ pip install -e ".[dev]"
 pytest
 
 # Run CLI
-mindai --help
+HelloSynk --help
 ```
 
 ## Skills Marketplace
@@ -84,8 +84,8 @@ mindai --help
 Browse and install skills from the community:
 
 ```bash
-mindai skill search email
-mindai skill install email-manager
+HelloSynk skill search email
+HelloSynk skill install email-manager
 ```
 
 ## License
