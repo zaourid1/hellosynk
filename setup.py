@@ -7,13 +7,13 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
-    name="mindai",
+    name="HelloSynk",
     version="0.1.0",
-    author="MindAI Contributors",
+    author="HelloSynk Contributors",
     description="An open-source, local-first operating system for personal AI agents",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/mindai",
+    url="https://github.com/yourusername/HelloSynk",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -36,7 +36,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "mindai=mindai.cli.main:cli",
+            "HelloSynk=HelloSynk.cli.main:cli",
         ],
     },
 )
