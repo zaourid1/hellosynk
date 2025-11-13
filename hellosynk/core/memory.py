@@ -89,6 +89,10 @@ class MemoryNode:
         if metadata:
             self.metadata.update(metadata)
         self.updated_at = datetime.now()
+    
+    def __hash__(self) -> int:
+        """Allow MemoryNode instances to be hashable based on their unique id"""
+        return hash(self.id)
 
 
 class MemoryGraph:

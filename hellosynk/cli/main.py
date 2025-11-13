@@ -57,6 +57,24 @@ def chat(query, provider, model, api_key):
             for execution in result["executions"]:
                 status_emoji = "✅" if execution["status"] == "success" else "❌"
                 console.print(f"{status_emoji} {execution['skill']}: {execution['status']}")
+                
+                # Display result data if available
+                if execution.get("status") == "success" and execution.get("result"):
+                    result_data = execution["result"]
+                    # For time skill, show formatted time prominently
+                    if execution["skill"] == "time" and "formatted" in result_data:
+                        console.print(f"   [cyan]Time:[/cyan] {result_data['formatted']} ({result_data.get('timezone', 'unknown')} timezone)")
+                    # For other skills, show key result fields
+                    elif isinstance(result_data, dict):
+                        # Show message if available
+                        if "message" in result_data:
+                            console.print(f"   [cyan]{result_data['message']}[/cyan]")
+                        # Show other important fields
+                        for key in ["formatted", "time", "temperature", "location", "title"]:
+                            if key in result_data:
+                                console.print(f"   [cyan]{key.title()}:[/cyan] {result_data[key]}")
+                elif execution.get("status") == "error" and execution.get("error"):
+                    console.print(f"   [red]Error:[/red] {execution['error']}")
     
     asyncio.run(run())
 

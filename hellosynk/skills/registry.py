@@ -77,6 +77,12 @@ class SkillRegistry:
                 self.register_skill(NotionSkill)
             except ImportError:
                 pass
+            
+            try:
+                from hellosynk.skills.time_skill import TimeSkill
+                self.register_skill(TimeSkill)
+            except ImportError:
+                pass
         except ImportError:
             pass
     
@@ -150,7 +156,7 @@ class SkillRegistry:
             raise ValueError(f"Skill '{name}' not found")
     
     def install_skill(self, skill_path: str):
-        """Install a skill from a file path"""
+        """Install a skill from a file"""
         skill_file = Path(skill_path)
         if not skill_file.exists():
             raise FileNotFoundError(f"Skill file not found: {skill_path}")
