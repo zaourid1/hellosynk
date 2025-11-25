@@ -1,0 +1,57 @@
+<!-- 
+    HelloSynk OS WordPress Embed Snippet
+    Copy and paste this into a WordPress Custom HTML block
+    Replace YOUR_HELLOSYNK_URL with your actual server URL
+-->
+
+<div class="hellosynk-demo-container" style="width: 100%; height: 800px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 20px 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <iframe 
+        src="YOUR_HELLOSYNK_URL" 
+        width="100%" 
+        height="100%" 
+        frameborder="0"
+        style="border: none; display: block;"
+        allow="clipboard-read; clipboard-write; fullscreen"
+        title="HelloSynk OS Demo - An operating system for personal AI agents"
+        loading="lazy"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<style>
+    /* Responsive design */
+    .hellosynk-demo-container {
+        min-height: 600px;
+    }
+    
+    @media (max-width: 768px) {
+        .hellosynk-demo-container {
+            height: 600px !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hellosynk-demo-container {
+            height: 500px !important;
+        }
+    }
+</style>
+
+<!-- 
+    Instructions:
+    1. Replace YOUR_HELLOSYNK_URL with your actual HelloSynk server URL
+       Example: https://your-hellosynk.herokuapp.com
+       Or for testing: https://abc123.ngrok.io
+    
+    2. In WordPress:
+       - Go to your page/post editor
+       - Add a "Custom HTML" block
+       - Paste this code (with your URL replaced)
+       - Publish/Update
+    
+    3. For a public demo, make sure your server is:
+       - Accessible via HTTPS
+       - Running on a public URL (not localhost)
+       - Has CORS enabled (already configured in HelloSynk)
+-->
+

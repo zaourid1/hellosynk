@@ -83,6 +83,12 @@ class SkillRegistry:
                 self.register_skill(TimeSkill)
             except ImportError:
                 pass
+            
+            try:
+                from hellosynk.skills.self_learning_skill import SelfLearningSkill
+                self.register_skill(SelfLearningSkill)
+            except ImportError:
+                pass
         except ImportError:
             pass
     

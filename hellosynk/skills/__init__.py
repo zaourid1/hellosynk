@@ -9,6 +9,7 @@ try:
     from hellosynk.skills.email_skill import EmailSkill
     from hellosynk.skills.notion_skill import NotionSkill
     from hellosynk.skills.time_skill import TimeSkill
+    from hellosynk.skills.self_learning_skill import SelfLearningSkill
 except ImportError:
     pass
 
